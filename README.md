@@ -12,6 +12,7 @@ this tool can be useful for you.
 
 ## Planned
 
+* Count folder sizes
 * Index files using a SQLite database for fast finding of files
 * Listen for files changes using fswatch
 * Filter by date, modification date
