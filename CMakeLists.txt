@@ -8,6 +8,9 @@ project(FerrisFileIndexer)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 set(SOURCE_FILES main.cpp)
 
+SET(BUILD_SHARED_LIBRARIES OFF)
+SET(CMAKE_EXE_LINKER_FLAGS "-static")
+
 add_executable(FerrisFileIndexer src/${SOURCE_FILES})
 
 #target_link_libraries(FerrisFileIndexer ${CONAN_LIBS})
