@@ -13,6 +13,12 @@ std::ifstream::pos_type filesize(char *filename) {
     return in.tellg();
 }
 
+/**
+ * Platform independent isFolder check
+ *
+ * @param filename
+ * @return
+ */
 bool isFolder(char *filename) {
     struct stat info;
 
@@ -25,10 +31,8 @@ bool isFolder(char *filename) {
 }
 
 void scanFolder(std::vector<std::pair<std::string, int>> *fileVector, const char *dirName) {
-    DIR *pDIR;
-    struct dirent *entry;
-    if (pDIR = opendir(dirName)) {
-        while (entry = readdir(pDIR)) {
+    if (DIR *pDIR = opendir(dirName)) {
+        while (auto entry = readdir(pDIR)) {
             char *fileName = entry->d_name;
             if (strcmp(entry->d_name, ".") != 0 && strcmp(entry->d_name, "..") != 0) {
                 if (isFolder(fileName)) {
@@ -48,6 +52,8 @@ void scanFolder(std::vector<std::pair<std::string, int>> *fileVector, const char
 
 void listFile() {
     std::vector<std::pair<std::string, int>> fileVector;
+
+    //start scanning with the root directory
     scanFolder(&fileVector, ".");
 
     std::sort(fileVector.begin(), fileVector.end(), [](auto &left, auto &right) {

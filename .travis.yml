@@ -1,0 +1,4 @@
+# Use travis-ci.org for automatic tests
+language: cpp
+
+script: make

@@ -9,6 +9,7 @@ this tool can be useful for you.
 ## Features
 
 * List big files
+* Scans recursive the folders
 
 ## Planned
 
