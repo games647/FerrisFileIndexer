@@ -56,6 +56,14 @@ generator. Then you could run ```cmake -G "GENERATOR"```
 
 Run the binary file. There are not file arguments at the moment
 
+## Example output
+
+    2372644 bytes ./FerrisFileIndexer.exe
+    13906 bytes ./CMakeCache.txt
+    6414 bytes ./FerrisFileIndexer.cbp
+    5627 bytes ./Makefile
+    1381 bytes ./cmake_install.cmake
+
 ## Credits/Dependencies
 
 *
